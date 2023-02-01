@@ -1,0 +1,60 @@
+/*--------- Utilities ----------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Nunito', 'Helvetica Neue';
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*--------- Navbar ------------*/
+nav {
+    padding: 1.6rem 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 5rem;
+    column-gap: 1.5rem;
+    color: #FFFFFF
+}
+
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.links ul {
+    margin-right: calc(7.5rem - 2.4rem);
+}
+.links ul li {
+    display: inline-block;
+    margin-left: 3.2rem;
+}
+
+.links ul li a{
+    font-size: 1.8rem;
+    color: #FFFFFF;
+}
+
+.nav-buttons button{
+    padding: 1.6rem 4rem;
+    background-color: #FFE492;
+    font-size: 1.6rem;
+    color: #043873;
+    border: 1px solid #043873;
+    border-radius: 8px;
+    margin-left: 2.4rem;
+}
