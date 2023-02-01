@@ -51,3 +51,58 @@ competitorForm.onsubmit = async (event) => {
     console.log(response);
     updateData(response, 'competitor-');
 }
+
+
+const comparisonChart = document.getElementById('bar-chart').getContext('2d');
+
+let chart = new Chart(comparisonChart, {
+    type: 'bar',
+    data: {
+        labels: ["Tweets", "Followers", "Following"],
+        datasets: [
+            {
+                data: [23, 5, 112],
+                backgroundColor: ["#043873", "#043873", "#043873"], 
+                label: "Company1"
+            }, 
+            {
+                data: [889, 40, 215],
+                backgroundColor: ["#FF9B85", "#FF9B85", "#FF9B85"],
+                label: "Company2"
+            }
+        ]
+    },
+    options: {
+        indexAxis: 'y',
+        plugins: {
+            title: {
+                display: true,
+                text: "Comparison",
+                align: "start",
+                font: {
+                    size: 24,
+                    family: "Nunito",
+                }
+            },
+            legend: {
+                labels: {
+                    usePointStyle: true,
+                    pointStyle: "circle",
+                },
+                align: "end"
+            }
+        },
+        tooltips: {
+            enabled: false
+        },
+        responsive: false,
+        legend: {
+            display: false,
+            position: 'bottom',
+            fullWidth: true,
+            labels: {
+                usePointStyle: true,
+                boxWidth: 6
+            }
+   }
+}})

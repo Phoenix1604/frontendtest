@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Nunito&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.0/dist/chart.umd.min.js"></script>
     <title>Statify</title>
 </head>
 <body style="background-color: #DFEBE9;">
@@ -59,6 +60,10 @@
                 <section class="card" style="background-color: #0A5F59"><h3>Followers</h3><p id="competitor-followers">0</p></section>
                 <section class="card" style="background-color: #252B42"><h3>Following</h3><p id="competitor-following">0</p></section>
             </section>
+        </section>
+        <!--Chart Section-->
+        <section class="chart">
+            <canvas id="bar-chart" role="img"></canvas>
         </section>
     </main>
     <script type="text/javascript" src="./script.js" defer></script>

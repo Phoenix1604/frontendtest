@@ -151,3 +151,18 @@ nav {
 .card p {
     font-size: 4.8rem;
 }
+
+/*----------- Graph Section------------*/
+.chart {
+    margin: auto;
+    width: 80%;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 24px;
+}
+
+.chart canvas {
+    margin: auto;
+    width: 100%;
+    padding: 2vw;
+}
