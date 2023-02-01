@@ -35,29 +35,29 @@
         <section class="stats">
             <section class="input user"><!--Your Stats Section-->
                 <h2>Your Username</h2>
-                <section class="input-field">
-                    <input type="text" placeholder = 'Enter Your Username' onfocus="this.placeholder = ''"onblur="this.placeholder = 'Enter Your Username'">
+                <form id="userform" name="userform" class="input-field" value="">
+                    <input type="text" name="username" placeholder = 'Enter Your Username' onfocus="this.placeholder = ''"onblur="this.placeholder = 'Enter Your Username'">
                     <button type="submit">Generate</button>
-                </section>
+                </form>
             </section>
             <section class="cards">
-                <section class="card" style="background-color: #0A5F59"><h3>Name</h3><p style="font-size: 3rem;">Unknown</p></section>
-                <section class="card" style="background-color: #FDCF6F; color: #283618;"><h3>Tweets</h3><p>0</p></section>
-                <section class="card" style="background-color: #0A5F59"><h3>Followers</h3><p>0</p></section>
-                <section class="card" style="background-color: #252B42"><h3>Following</h3><p>0</p></section>
+                <section class="card" style="background-color: #0A5F59"><h3>Name</h3><p id="user-username" style="font-size: 3rem;">Unknown</p></section>
+                <section class="card" style="background-color: #FDCF6F; color: #283618;"><h3>Tweets</h3><p id="user-tweets">0</p></section>
+                <section class="card" style="background-color: #0A5F59"><h3>Followers</h3><p id="user-followers">0</p></section>
+                <section class="card" style="background-color: #252B42"><h3>Following</h3><p id="user-following">0</p></section>
             </section>
             <section class="input competitor"><!--Competitor's Stats Section-->
                 <h2>Competitor's Username</h2>
-                <section class="input-field">
-                    <input type="text" placeholder = "Enter Competitor's Username" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Enter Competitors Username'">
+                <form id="competitorForm" name="competitorForm" class="input-field" value="">
+                    <input type="text" name="username" placeholder = "Enter Competitor's Username" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Enter Competitors Username'">
                     <button type="submit">Generate</button>
-                </section>
+                </form>
             </section>
             <section class="cards">
-                <section class="card" style="background-color: #0A5F59"><h3>Name</h3><p style="font-size: 3rem;">Unknown</p></section>
-                <section class="card" style="background-color: #FDCF6F; color: #283618;"><h3>Tweets</h3><p>0</p></section>
-                <section class="card" style="background-color: #0A5F59"><h3>Followers</h3><p>0</p></section>
-                <section class="card" style="background-color: #252B42"><h3>Following</h3><p>0</p></section>
+                <section class="card" style="background-color: #0A5F59"><h3>Name</h3><p id="competitor-username" style="font-size: 3rem;">Unknown</p></section>
+                <section class="card" style="background-color: #FDCF6F; color: #283618;"><h3>Tweets</h3><p id="competitor-tweets">0</p></section>
+                <section class="card" style="background-color: #0A5F59"><h3>Followers</h3><p id="competitor-followers">0</p></section>
+                <section class="card" style="background-color: #252B42"><h3>Following</h3><p id="competitor-following">0</p></section>
             </section>
         </section>
     </main>
