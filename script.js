@@ -1,5 +1,8 @@
-let user;
+document.querySelector('#menu').addEventListener('click', function onClick() {
+    document.querySelector('nav ul').classList.toggle('showmenu');
+})
 
+let user;
 const fetchData = async(username) => {
     const url = 'https://twitter135.p.rapidapi.com/UserByScreenName/?username=' + username;
     const options = {
@@ -77,22 +80,13 @@ const createChart = async(userData, userName, competitorData, competitorName) =>
         options: {
             indexAxis: 'y',
             plugins: {
-                title: {
-                    display: true,
-                    text: "Comparison",
-                    align: "start",
-                    font: {
-                        size: 24,
-                        family: "Nunito",
-                    }
-                },
                 legend: {
                     labels: {
                         usePointStyle: true,
                         pointStyle: "circle",
                         font: {
-                            size: 20,
-                            font: "Nunito"
+                            font: "Nunito",
+                            size: 14
                         },
                     },
                     align: "end"
@@ -102,7 +96,6 @@ const createChart = async(userData, userName, competitorData, competitorName) =>
             tooltips: {
                 enabled: false
             },
-            // responsive: true,
             maintainAspectRatio: false,
             scales: {
                 y: {
@@ -115,8 +108,8 @@ const createChart = async(userData, userName, competitorData, competitorName) =>
                   ticks: {
                     color: '#a5a58d',
                     font: {
-                        size: 20,
-                        font: "Nuinto"
+                        font: "Nuinto",
+                        size: 14
                     }
                     
                   }
@@ -134,12 +127,10 @@ const createChart = async(userData, userName, competitorData, competitorName) =>
                     beginAtZero: true,
                     fontColor: '#555759',
                     fontFamily: 'Nuinto',
-                    fontSize: 11, 
+                    fontSize: 14, 
                   }
                 }
             }
     }})
-
-    document.getElementById('chart').style.visibility = 'visible';
+    document.querySelector('.chart-card').style.display = 'block';
 }
-
