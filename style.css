@@ -17,6 +17,11 @@ a {
 
 button {
     padding: 1.6rem 4rem;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*--------- Navbar ------------*/
@@ -153,16 +158,25 @@ nav {
 }
 
 /*----------- Graph Section------------*/
+.chartCard {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .chart {
     margin: auto;
+    position: relative;
     width: 80%;
+    height: 50%;
     background-color: #FFFFFF;
-    border: none;
+    border: solid 3px rgba(54, 162, 235, 1);
     border-radius: 24px;
+    visibility: hidden;
 }
 
 .chart canvas {
-    margin: auto;
-    width: 100%;
-    padding: 2vw;
+    padding: 2rem;
+    width: 80%;
 }
