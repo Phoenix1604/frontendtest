@@ -41,3 +41,21 @@
         color: #2B2B31;
     }
 }
+
+/*---------- hero Section ------------*/
+
+@media only screen and (max-width: 580px) {
+    .hero{
+        flex-direction: column;
+        justify-content: center;
+        padding: 6rem 4vw;
+    }
+
+    .hero-text p {
+        padding: 0;
+    }
+
+    .hero-img{
+        padding-top: 2rem;
+    }
+}
