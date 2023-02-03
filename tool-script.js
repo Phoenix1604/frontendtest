@@ -64,6 +64,7 @@ competitorForm.onsubmit = async (event) => {
 }
 
 const createRadialChart = (userData, userName, competitorData, competitorName, chartId, chartTitle) => {
+    document.querySelector('.chart-card').style.display = 'flex';
     const comparisonChart = document.getElementById(chartId).getContext('2d');
     let chart = new Chart(comparisonChart, {
         type: 'doughnut',
@@ -112,8 +113,6 @@ const createRadialChart = (userData, userName, competitorData, competitorName, c
             plugins: { title: { display: true, text: chartTitle,font: {size: 20} } }
         },
     })
-
-    document.querySelector('.chart-card').style.display = 'flex';
 }
 
 // createRadialChart(12, "Subhajit", 900, "Somnath",  'radial-chart1', 'Tweet');

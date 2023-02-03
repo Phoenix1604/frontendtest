@@ -89,3 +89,15 @@
         align-self: center;
     }
 }
+
+/*--------------- footer links--------------------*/
+
+@media only screen and (max-width: 610px){
+    .language ul{
+        flex-direction: column;
+    }
+
+    .language ul li {
+        padding-left: 0;
+    }
+}

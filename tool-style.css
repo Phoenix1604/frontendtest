@@ -44,10 +44,6 @@ nav {
     color: #FFFFFF
 }
 
-
-ul {
-    margin-right: calc(7.5rem - 2.4rem);
-}
 nav ul li {
     display: inline-block;
     margin-left: 3.2rem;
@@ -172,4 +168,100 @@ nav ul button{
 
 .chart-card div {
     flex-basis: 30%;
+}
+
+/*---------- footer section-----------*/
+/*--------------- footer --------------------*/
+.footer-text {
+    padding: 7.4rem 4vw;
+    display:flex;
+    justify-content: space-between;
+    /* gap: 10rem; */
+    color: #FFFFFF
+}
+
+.footer-text > section {
+    flex-basis: 20%;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding-right: 5rem;
+}
+
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.links h4 {
+    font-size: 1.8rem;
+}
+
+.links ul li{
+    padding-bottom: 1.5rem;
+}
+
+.links ul li a {
+    color: #FFFFFF;
+    font-family: 'Nuinto';
+    font-size: 1.6rem;
+}
+
+.links button {
+    border: none;
+    border-radius: 8px;
+    background-color: #4F9CF9;
+    align-self: flex-start;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+}
+
+/*--------------- footer links--------------------*/
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-between;
+    padding: 3.3rem 4vw;
+}
+
+.language-icon {
+    width: 1.6rem;
+}
+
+.language ul{
+    display: flex;
+}
+
+.language ul li {
+    display: inline-block;
+    padding: 0 3rem;
+}
+
+.language ul li:first-child {
+    padding-left: 0;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.language ul li a{
+    color: #FFFFFF;
+    font-size: 1.6rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 3.2rem;
+}
+
+.social-links img {
+    width: 1.7rem;
+    height: 1.4rem;
 }
