@@ -45,17 +45,17 @@
 /*---------- hero Section ------------*/
 
 @media only screen and (max-width: 580px) {
-    .hero{
+    .two-cols{
         flex-direction: column;
         justify-content: center;
         padding: 6rem 4vw;
     }
 
-    .hero-text p {
+    .two-cols-text p {
         padding: 0;
     }
 
-    .hero-img{
+    .two-cols-img{
         padding-top: 2rem;
     }
 }

@@ -74,22 +74,27 @@ nav ul button{
 }
 
 /*--------- Hero Section ------------*/
-.hero{
-    padding: 10rem 4vw;
+.two-cols{
     display: flex;
     justify-content: space-between;
+    padding: 10rem 4vw;
+}
+.hero{
     background-image: url('./images/Element.png');
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.hero-text {
+.two-cols-text{
     flex-basis: 50%;
     align-self: center;
-    color: #FFFFFF;
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
+}
+
+.hero-text {
+    color: #FFFFFF;
 }
 
 .hero-text h1 {
@@ -97,20 +102,34 @@ nav ul button{
     font-family: 'Inter';
 }
 
-.hero-text p {
+.two-cols p {
     font-size: 1.8rem;
     line-height: 3rem;
     width: 80%;
     padding-bottom: calc(6rem - 2.4rem);
 }
 
-.hero-text button {
+.two-cols-text button {
     padding: 2rem 4rem;
     font-size: 1.8rem;
     color: #FFFFFF;
     align-self: flex-start;
 }
 
-.hero-img {
+.two-cols-img {
     flex-basis: 40%;
+}
+
+/*------- twitter section ------------*/
+.twitter {
+    padding: 7.4rem 4vw;
+}
+.twitter-text {
+    background-image: url('./images/twitter-section-vector.png');
+    background-repeat: no-repeat;
+    color:#212529;
+}
+.twitter-text h1{
+    font-size: 7.2rem;
+    font-family: 'Nuinto';
 }
