@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./media-query.css" media="(max-width: 1000px)">
+    <link rel="stylesheet" href="./tool-style.css">
+    <link rel="stylesheet" href="./tool-media-query.css" media="(max-width: 1000px)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Nunito&display=swap" rel="stylesheet">
@@ -60,15 +60,19 @@
         </section>
         <!--Chart Section-->
         <section class="chart-card">
-            <div class="chart" id="chart">
-                <h4>Comparison</h4>
-                <canvas id="bar-chart" role="img" ></canvas>
+            <div class="radial-chart1" id="radial-chart-div1">
+                <canvas id="radial-chart1" role="img" ></canvas>
+            </div>
+            <div class="radial-chart2" id="radial-chart-div2">
+                <canvas id="radial-chart2" role="img" ></canvas>
+            </div>
+            <div class="radial-chart3" id="radial-chart-div3">
+                <canvas id="radial-chart3" role="img" ></canvas>
             </div>
         </section>
-        
     </main>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.0/dist/chart.umd.min.js" defer></script>
-    <script type="text/javascript" src="./script.js" defer></script>
+    <script type="text/javascript" src="./tool-script.js" defer></script>
 </body>
 </html>

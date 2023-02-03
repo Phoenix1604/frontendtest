@@ -84,7 +84,7 @@ nav ul button{
 }
 
 .competitor{
-    color: #FF9B85;
+    color: #ed775c;
 }
 
 .input h2 {
@@ -110,7 +110,7 @@ nav ul button{
 }
 
 .competitor input {
-    border: 3px solid #FF9B85;
+    border: 3px solid #ed775c;
 }
 
 .input-field button {
@@ -125,7 +125,7 @@ nav ul button{
 }
 
 .competitor button{
-    background-color: #FF9B85;
+    background-color: #ed775c;
 }
 /*----------------stats section > card section----------------*/
 .cards {
@@ -159,32 +159,17 @@ nav ul button{
 }
 
 /*----------- Graph Section------------*/
-
 .chart-card {
-    display: none;
-}
-
-
-.chart {
-    margin: auto;
-    position: relative;
-    width: 80vw;
-    height: 35vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0 10vw 2.5rem 10vw;
     background-color: #FFFFFF;
     border: solid 3px rgba(54, 162, 235, 1);
     border-radius: 24px;
-    /* visibility: hidden; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.chart h4 {
-    font-family: 'Nunito';
-    font-size: 2rem;
-}
-
-.chart canvas {
-    padding: 2rem;
-    width: 80%;
+.chart-card div {
+    flex-basis: 30%;
 }
