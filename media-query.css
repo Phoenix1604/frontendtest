@@ -59,3 +59,33 @@
         padding-top: 2rem;
     }
 }
+
+/*---------- information Section ---------------*/
+@media only screen and (max-width: 480px){
+    .information h2 {
+        padding-top: 10rem;
+        font-size: 5rem;
+    }
+}
+
+/*--------- footer section ----------------*/
+@media only screen and (max-width: 700px) {
+    .footer-text {
+        flex-direction: column;
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    .links {
+        align-items: center;
+    }
+
+    .links ul{
+        margin: auto;
+        text-align: center;
+    }
+
+    .links button {
+        align-self: center;
+    }
+}
