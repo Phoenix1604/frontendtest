@@ -1,8 +1,10 @@
+//for toggle navbar
 document.querySelector('#menu').addEventListener('click', function onClick() {
     document.querySelector('nav ul').classList.toggle('showmenu');
 })
 
-let user;
+let user; // variable to store user data
+// fetch data from the api
 const fetchData = async(username) => {
     const url = 'https://twitter135.p.rapidapi.com/UserByScreenName/?username=' + username;
     const options = {
@@ -32,6 +34,7 @@ const fetchData = async(username) => {
     return dataobj;
 }
 
+//update the card details with the fetched data
 const updateData = (dataobj, idprefix) => {
     const idsuffix = ['username', 'tweets', 'followers', 'following'];
     for(const id of idsuffix) {
@@ -39,6 +42,7 @@ const updateData = (dataobj, idprefix) => {
     }
 }
 
+// userform submit 
 userform.onsubmit = async (event) => {
     event.preventDefault();
     const username = document.forms['userform']['username'].value;
@@ -48,19 +52,17 @@ userform.onsubmit = async (event) => {
 }
 competitorForm.onsubmit = async (event) => {
     event.preventDefault();
-    if(!user){
+    if(!user){ //if user first try to generate competitors data
         alert("Please generate your data first");
         return;
     }
     const username = document.forms['competitorForm']['username'].value;
     const response = await fetchData(username);
     updateData(response, 'competitor-');
-    let userData = [user.tweets, user.followers, user.following];
-    let competitorData = [response.tweets, response.followers, response.following];
-    // createChart(userData, user.username, competitorData, response.username);
     createRadialChart(user.tweets, user.username, response.tweets, response.username,  'radial-chart1', 'Tweet');
     createRadialChart(user.followers, user.username, response.followers, response.username,  'radial-chart2', 'Followers');
     createRadialChart(user.following, user.username, response.following, response.username,  'radial-chart3', 'Following');
+    window.scrollTo({top: (2*window.innerHeight), left: 0, behavior: 'smooth'});
 }
 
 const createRadialChart = (userData, userName, competitorData, competitorName, chartId, chartTitle) => {
@@ -84,7 +86,7 @@ const createRadialChart = (userData, userName, competitorData, competitorName, c
                         return datapoint.data[0];
                     });
                     const maxValue = Math.max(...datapoints);
-                    return compariosnChart.dataset.data[0]/maxValue * 360;
+                    return compariosnChart.dataset.data[0]/maxValue * 270;
                 }
               }, 
                 {
@@ -102,19 +104,40 @@ const createRadialChart = (userData, userName, competitorData, competitorName, c
                         return datapoint.data[0];
                     });
                     const maxValue = Math.max(...datapoints);
-                    return compariosnChart.dataset.data[0]/maxValue * 360;
+                    return compariosnChart.dataset.data[0]/maxValue * 270;
                 }
             }]
         },
         options: {
             borderRadius: 10,
-            cutout: '85%',
+            cutout: '70%',
             maintainAspectRatio: false,
             plugins: { title: { display: true, text: chartTitle,font: {size: 20} } }
         },
+        plugins:[{
+            id: 'circularLabel',
+            afterDatasetsDraw: ((chart, args, plugins) => {
+                const {ctx, data, scales} = chart;
+                ctx.save();
+                ctx.font = 'bold 12px sans-serif';
+                ctx.textAlign = 'right';
+                ctx.textBaseline = 'middle';
+
+                for(let i = 0; i< data.datasets.length; i++) {
+                    ctx.fillStyle = data.datasets[i].backgroundColor[0];
+                    const outerRadius = chart.getDatasetMeta(i).controller.outerRadius;
+                    const innerRadius = chart.getDatasetMeta(i).controller.innerRadius;
+                    const width = outerRadius - innerRadius;
+                    const xCorr = chart.getDatasetMeta(i).data[0].x;
+                    const yCorr = chart.getDatasetMeta(i).data[0].y;
+                    ctx.fillText(data.datasets[i].label, xCorr -5, yCorr - innerRadius - (width/2));
+                }
+                
+            })
+        }]
     })
 }
 
-// createRadialChart(12, "Subhajit", 900, "Somnath",  'radial-chart1', 'Tweet');
-// createRadialChart(12, "Subhajit", 900, "Somnath",  'radial-chart2', 'followers');
-// createRadialChart(12, "Subhajit", 900, "Somnath",  'radial-chart3', 'following');
+// createRadialChart(885, "Subhajit", 900, "Somnath",  'radial-chart1', 'Tweet');
+// createRadialChart(885, "Subhajit", 900, "Somnath",  'radial-chart2', 'followers');
+// createRadialChart(885, "Subhajit", 900, "Somnath",  'radial-chart3', 'following');
