@@ -3,6 +3,10 @@ document.querySelector('#menu').addEventListener('click', function onClick() {
     document.querySelector('nav ul').classList.toggle('showmenu');
 })
 
+const loadToolPage = () => {
+    return window.location.href = "./toolpage.html";
+}
+
 let user; // variable to store user data
 // fetch data from the api
 const fetchData = async(username) => {
@@ -17,7 +21,7 @@ const fetchData = async(username) => {
 
     let response = await fetch(url, options);
     if(!response.ok) {
-        console.log("Error: " + response.status);
+        alert("We are at capacity. Please try again after sometime");
     }
     
     const result =  await response.json();
@@ -34,12 +38,41 @@ const fetchData = async(username) => {
     return dataobj;
 }
 
-//update the card details with the fetched data
+//update the card details with the fetched data (DOM Manipulation)
 const updateData = (dataobj, idprefix) => {
     const idsuffix = ['username', 'tweets', 'followers', 'following'];
     for(const id of idsuffix) {
         document.getElementById(idprefix + id).innerHTML = dataobj[id];
     }
+}
+
+const generateComparisonData = (competitorData) => {
+    let tweetText, tweetColor, followersText, followersColor;
+    if(user.tweets >= competitorData.tweets) {
+        tweetText = "+ " + (user.tweets - competitorData.tweets);
+        tweetColor = "#008000";
+    } else {
+        tweetText = "- " + (competitorData.tweets - user.tweets);
+        tweetColor = "#ba181b";
+    }
+
+    if(user.followers >= competitorData.followers) {
+        followersText = "+ " + (user.followers - competitorData.followers);
+        followersColor = "#008000";
+    } else {
+        followersText = "- " + (competitorData.followers - user.followers);
+        followersColor = "#ba181b";
+    }
+
+    const compareTweets = document.getElementById('compare-tweets');
+    compareTweets.innerHTML = tweetText;
+    compareTweets.style.display = 'block';
+    compareTweets.style.color = tweetColor;
+
+    const compareFollowers = document.getElementById('compare-followers');
+    compareFollowers.innerHTML = followersText;
+    compareFollowers.style.display = 'block';
+    compareFollowers.style.color = followersColor;
 }
 
 // userform submit 
@@ -59,6 +92,7 @@ competitorForm.onsubmit = async (event) => {
     const username = document.forms['competitorForm']['username'].value;
     const response = await fetchData(username);
     updateData(response, 'competitor-');
+    generateComparisonData(response);
     createRadialChart(user.tweets, user.username, response.tweets, response.username,  'radial-chart1', 'Tweet');
     createRadialChart(user.followers, user.username, response.followers, response.username,  'radial-chart2', 'Followers');
     createRadialChart(user.following, user.username, response.following, response.username,  'radial-chart3', 'Following');
@@ -114,7 +148,7 @@ const createRadialChart = (userData, userName, competitorData, competitorName, c
             maintainAspectRatio: false,
             plugins: { title: { display: true, text: chartTitle,font: {size: 20} } }
         },
-        plugins:[{
+        plugins:[{ // plugin into create chart labels with the twitter names
             id: 'circularLabel',
             afterDatasetsDraw: ((chart, args, plugins) => {
                 const {ctx, data, scales} = chart;
@@ -137,7 +171,3 @@ const createRadialChart = (userData, userName, competitorData, competitorName, c
         }]
     })
 }
-
-// createRadialChart(885, "Subhajit", 900, "Somnath",  'radial-chart1', 'Tweet');
-// createRadialChart(885, "Subhajit", 900, "Somnath",  'radial-chart2', 'followers');
-// createRadialChart(885, "Subhajit", 900, "Somnath",  'radial-chart3', 'following');

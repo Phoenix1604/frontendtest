@@ -154,6 +154,12 @@ nav ul button{
     font-size: 4.8rem;
 }
 
+#compare-tweets, #compare-followers {
+    font-size: 3rem;
+    display: none;
+}
+
+
 /*----------- Graph Section------------*/
 .chart-card {
     margin: 0 10vw 2.5rem 10vw;
